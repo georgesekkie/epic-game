@@ -2,9 +2,9 @@ const main = async () => {
     const gameContractFactory = await hre.ethers.getContractFactory('MyEpicGame');
     const gameContract = await gameContractFactory.deploy(
         ["Bulbasaur", "Charmander", "Squirtle"], 
-        ["QmQh3Uy5Mg2eKW1S2j81SsTzTBxabLipBqJ3jJGmjV8j3J",  
-        "QmQEBvQrwufwKip4yb38xwf9fDM8h8tUtxSfLmbEpSFxYY",
-        "QmdNUUtoiT6f4dRugCzd2bvHGvsuuqgRJAYRMKQwqgNegC"],
+        ["https://cloudflare-ipfs.com/ipfs/QmQh3Uy5Mg2eKW1S2j81SsTzTBxabLipBqJ3jJGmjV8j3J",  
+         "https://cloudflare-ipfs.com/ipfs/QmQEBvQrwufwKip4yb38xwf9fDM8h8tUtxSfLmbEpSFxYY",
+         "https://cloudflare-ipfs.com/ipfs/QmdNUUtoiT6f4dRugCzd2bvHGvsuuqgRJAYRMKQwqgNegC"],
         [300, 301, 703],                    // キャラクターのHP
         [100, 50, 25],
         "MYU2", // Bossの名前
