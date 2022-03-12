@@ -212,6 +212,19 @@ contract MyEpicGame is ERC721 {
     emit AttackComplete(bigBoss.hp, player.hp);
   }
 
+  function kizuGusuri() public {
+    uint256 nftTokenIdOfPlayer = nftHolders[msg.sender];
+    CharacterAttributes storage player = nftHolderAttributes[nftTokenIdOfPlayer];
+    // ボスのHPが0以上であることを確認する。
+    require (
+      bigBoss.hp > 0,
+      "Error: boss must have HP to attack boss."
+    );
+    player.hp += 20;
+
+    emit AttackComplete(bigBoss.hp, player.hp);
+  }
+
   function checkIfUserHasNFT() public view returns (CharacterAttributes memory) {
     // ユーザーの tokenId を取得します。
     uint256 userNftTokenId = nftHolders[msg.sender];
